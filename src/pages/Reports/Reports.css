@@ -1,0 +1,66 @@
+.reports-page{
+    min-height:100vh;
+}
+
+.reports-content{
+    max-width:1100px;
+    margin:0 auto;
+    padding:24px 16px;
+}
+
+.reports-title{
+    margin-bottom:24px;
+    font-size:20px;
+    font-weight:600;
+    color:#ffbe38;
+}
+
+.emoji-summary{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(140px, 1fr));
+    gap:16px;
+}
+
+.emoji-card{
+    background-color:#343243;
+    padding:16px;
+    border-radius:12px;
+    text-align:center;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:8px;
+}
+
+.emoji-count{
+    font-size:18px;
+    font-weight:600;
+}
+
+.monthly-report{
+    margin-top:32px;
+    background-color:#343243;
+    padding:24px;
+    border-radius:12px;
+}
+
+.monthly-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:16px;
+}
+
+.monthly-header select{
+    background-color:#1c1a28;
+    color:#ffffff;
+    border:1px solid $4e5d72;
+    border-radius:6px;
+    padding:6px 10px;
+}
+
+.chart-container{
+    width:50%;
+    height:300px;
+}

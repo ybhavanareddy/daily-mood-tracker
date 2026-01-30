@@ -1,0 +1,35 @@
+.home-page{
+    min-height:100vh;
+}
+.home-page h2{
+  text-align:center;
+  color:#ffbe38;
+  margin-top:5px;
+}
+
+.home-content{
+    max-width:1200px;
+    margin:0 auto;
+    padding:24px 16px;
+
+    display:grid;
+    grid-template-columns:3fr 2fr;
+    gap:24px;
+}
+
+.home-left{
+    display:flex;
+    flex-direction:column;
+}
+.home-right {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+@media (max-width: 768px) {
+  .home-content {
+    grid-template-columns: 1fr;
+  }
+}
+
