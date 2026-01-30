@@ -41,8 +41,10 @@ This project focuses on **real-world frontend architecture**, clean UI/UX, state
 ✔️ Month & year navigation  
 ✔️ **Emoji & Day Filters** with non-destructive visual highlighting  
 ✔️ **Reports Dashboard**
+
 - Overall emoji count
 - Month-wise mood analytics using bar charts
+  
 ✔️ Mood data persistence using **localStorage**  
 ✔️ Fully **responsive UI** (Desktop, Tablet, Mobile)  
 ✔️ Clean component-based architecture  
