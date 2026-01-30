@@ -42,7 +42,7 @@ This project focuses on **real-world frontend architecture**, clean UI/UX, state
 ✔️ **Emoji & Day Filters** with non-destructive visual highlighting  
 ✔️ **Reports Dashboard**
 - Overall emoji count
-- Month-wise mood analytics using bar charts  
+- Month-wise mood analytics using bar charts
 ✔️ Mood data persistence using **localStorage**  
 ✔️ Fully **responsive UI** (Desktop, Tablet, Mobile)  
 ✔️ Clean component-based architecture  
@@ -129,23 +129,23 @@ src/
 ## How to Run Locally
 
 1️⃣ Clone the repository
-    ```bash
+    ```
         git clone <https://github.com/ybhavanareddy/daily-mood-tracker.git>
     ```
 
 2️⃣ Navigate into the project folder
-    ```bash
+    ```
         cd daily-mood-tracker
     ```
 
 
 3️⃣ Install dependencies
-    ```bash
+    ```
         npm install
     ```
 
 4️⃣ Start the development server
-    ```bash
+    ```
         npm run dev
     ```
 
