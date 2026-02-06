@@ -53,27 +53,15 @@ This project focuses on **real-world frontend architecture**, clean UI/UX, state
 
 ## 🔐 Authentication (Mock Login)
 
-This project uses a **mock authentication flow** to simulate real-world login behavior on the frontend.
+This project uses a **frontend-only mock authentication flow**.
 
-### How it works:
-- User enters a username and password
-- A mock token is stored in cookies
+- Any username and password can be used to log in
+- A mock token is generated and stored in cookies
 - Protected routes are accessible only after login
 
-> ⚠️ **Note:**  
-> This is a frontend-only mock authentication.  
-> It does not include backend validation or real JWT generation.  
-> The structure supports easy integration with a real backend in the future.
-
-### 🧪 Sample Login Credentials
-
-Use the following credentials to access the app:
-
-Username: Bhavana
-Password: bhavana@123 
-
-
----
+> ⚠️ Note:  
+> This is a frontend-only implementation.  
+> No backend validation or real JWT authentication is involved.
 
 ## 💾 Data Persistence
 
