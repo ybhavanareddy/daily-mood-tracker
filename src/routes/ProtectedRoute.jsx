@@ -7,7 +7,7 @@ function ProtectedRoute({children}) {
     const token = Cookies.get('jwt_token')
 
     if(!token){
-        return <Navigate to="/Login" replace />
+        return <Navigate to="/login" replace />
     }
     return children
 }
