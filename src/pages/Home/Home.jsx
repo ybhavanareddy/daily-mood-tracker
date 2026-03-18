@@ -4,9 +4,10 @@ import Header from "../../components/Header/Header"
 import Calender from "../../components/Calender/Calender"
 import EmojiSelector from "../../components/EmojiSelector/EmojiSelector"
 import Filters from "../../components/Filters/Filters"
-import { daysList, emojisList } from "../../utils/constants"
 
+import { getFilteredCount } from '../../utils/filterUtil'
 import './Home.css'
+
 function Home({dateEmojis,setDateEmojis}){
 
 
@@ -19,30 +20,7 @@ function Home({dateEmojis,setDateEmojis}){
     const [currentMonth, setCurrentMonth] = useState(new Date().getMonth())
     const [currentYear, setCurrentYear] = useState(new Date().getFullYear())
 
-    const getFilteredCount = () => {
-        return Object.entries(dateEmojis).filter(([dateKey,emojiId]) => {
-            const[year,month,date] = dateKey.split('-').map(Number)
-
-            if(month - 1 !== currentMonth || year !== currentYear){
-                return false
-            }
-
-            const dayIndex = new Date(year, month - 1, date).getDay()
-            const dayName = daysList[dayIndex].day
-
-            const emojiObj = emojisList.find(e => e.id === emojiId)
-            if (!emojiObj) return false
-
-            const emojiName = emojiObj.emojiName
-
-            return(
-                (selectedEmoji === '' || emojiName === selectedEmoji )&&
-                (selectedDay === '' || dayName === selectedDay)
-
-            )
-        }).length
-    }
-
+    
 
 
 
@@ -76,7 +54,15 @@ function Home({dateEmojis,setDateEmojis}){
                         setSelectedEmoji={setSelectedEmoji}
                         selectedDay={selectedDay}
                         setSelectedDay={setSelectedDay}
-                        getFilteredCount={getFilteredCount}
+                        getFilteredCount={()=> 
+                            getFilteredCount(
+                                dateEmojis,
+                                currentMonth,
+                                currentYear,
+                                selectedEmoji,
+                                selectedDay
+                            )
+                        }
                     />
                     
 
