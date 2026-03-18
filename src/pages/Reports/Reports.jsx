@@ -37,6 +37,7 @@ function Reports ({dateEmojis}){
         count: getMonthlyEmojiCount(eachEmoji.id),
     }))
 
+    const hasData = monthlyChartData.some(item => item.count > 0)
     return (
         <div className="reports-page">
             <Header />
@@ -81,14 +82,18 @@ function Reports ({dateEmojis}){
                 
                 
                     <div className="chart-container">
-                        <ResponsiveContainer>
-                            <BarChart data={monthlyChartData}>
-                            <XAxis dataKey="name" />
-                            <YAxis allowDecimals={false} />
-                            <Tooltip />
-                            <Bar dataKey="count" fill="#ffbe38" radius={[6, 6, 0, 0]} />
-                            </BarChart>
-                        </ResponsiveContainer>
+                        {hasData ? (
+                                <ResponsiveContainer>
+                                    <BarChart data={monthlyChartData}>
+                                        <XAxis dataKey="name" />
+                                        <YAxis allowDecimals={false} />
+                                        <Tooltip />
+                                        <Bar dataKey="count" fill="#ffbe38" radius={[6, 6, 0, 0]} />
+                                    </BarChart>
+                                </ResponsiveContainer>
+                            ) : (
+                                <p className="no-data">No data for this month</p>
+                        )}
                     </div>
                 </section>
             </main>

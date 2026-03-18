@@ -14,10 +14,12 @@ import ProtectedRoute from './routes/ProtectedRoute'
 
 
 function App() {
+
   const [dateEmojis, setDateEmojis] = useState(()=>{
     const saved= localStorage.getItem("dateEmojis")
     return saved ? JSON.parse(saved):{}
   })
+  
   useEffect(()=>{
   localStorage.setItem("dateEmojis",JSON.stringify(dateEmojis))
 
