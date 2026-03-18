@@ -4,33 +4,60 @@
     align-items:center;
     background-color:#343243;
     padding:20px;
-    border-radius:12px;
+    border-radius:16px;
+    box-shadow: 0 0 10px rgba(253, 240, 3, 0.3); 
+    width: 100%;
 }
 
 .filters-row{
     display:flex;
-    gap:12px;
+    gap:16px;
+    width:100%;
 }
 
-.filters-row select{
-    flex:1;
-    height:36px;
-    background-color:#1c1a28;
-    color:#ffffff;
-    border:1px solid #4e5d72;
-    border-radius:6px;
-    padding:0 8px;
-    font-size:14px;
+.filter-group{
+  display:flex;
+  flex-direction:column;
+  flex:1;
 }
+
+.filter-group label{
+  font-size:12px;
+  color:#cbd5e1;
+  margin-bottom:6px;
+}
+
+/* Dropdown styling */
+
+.filters-row select{
+    height: 38px;
+    background-color: #1c1a28;
+    color: #ffffff;
+    border: 1px solid #4e5d72;
+    border-radius: 8px;
+    padding: 0 10px;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+/* Hover effect */
+.filters-row select:hover {
+    border-color: #ffbe38;
+}
+
 .filters-row select:focus {
   outline: none;
   border-color: #ffbe38;
+  box-shadow: 0 0 0 2px rgba(255,190,56,0.2);
 }
 
+/* Count / message */
 .filters-count {
-  margin-top: 20px;
-  text-align: center;
-  font-size: 32px;
-  font-weight: 600;
-  color:#ffffff;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 700;
+    color: #ffbe38;
 }
+

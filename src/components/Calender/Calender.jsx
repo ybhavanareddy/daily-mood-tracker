@@ -1,5 +1,4 @@
 import React from 'react'
-import {useState } from "react";
 import { daysList, monthsList } from "../../utils/constants";
 import { emojisList } from "../../utils/constants";
 import './Calender.css'
@@ -12,13 +11,13 @@ function Calender({
     setCurrentMonth,
     currentYear,
     setCurrentYear,
-    selectedEmojiFilter,
-    selectedDayFilter,
+    selectedEmoji,
+    selectedDay,
     
 
 }){
 
-    const today = new Date()
+    
 
     
 
@@ -92,8 +91,8 @@ function Calender({
         const dayName = daysList[dayIndex].day
 
         return (
-            emojiName === selectedEmojiFilter &&
-            dayName === selectedDayFilter
+            emojiName === selectedEmoji &&
+            dayName === selectedDay
         )
     }
 

@@ -12,8 +12,8 @@ function Home({dateEmojis,setDateEmojis}){
 
     const [activeEmojiId, setActiveEmojiId] = useState(1)
 
-    const[selectedEmojiFilters, setSelectedEmojiFilters] = useState('Very Happy')
-    const[selectedDayFilters, setSelectedDayFilters] = useState('Sun')
+    const[selectedEmoji, setSelectedEmoji] = useState('')
+    const[selectedDay, setSelectedDay] = useState('')
 
     
     const [currentMonth, setCurrentMonth] = useState(new Date().getMonth())
@@ -36,8 +36,8 @@ function Home({dateEmojis,setDateEmojis}){
             const emojiName = emojiObj.emojiName
 
             return(
-                emojiName === selectedEmojiFilters &&
-                dayName === selectedDayFilters
+                (selectedEmoji === '' || emojiName === selectedEmoji )&&
+                (selectedDay === '' || dayName === selectedDay)
 
             )
         }).length
@@ -61,8 +61,8 @@ function Home({dateEmojis,setDateEmojis}){
                         setCurrentMonth={setCurrentMonth}
                         currentYear={currentYear}
                         setCurrentYear={setCurrentYear}
-                        selectedEmojiFilters={selectedEmojiFilters}
-                        selectedDayFilters={selectedDayFilters}
+                        selectedEmoji={selectedEmoji}
+                        selectedDay={selectedDay}
                     />
                 </section>
                 
@@ -72,10 +72,10 @@ function Home({dateEmojis,setDateEmojis}){
                         setActiveEmojiId={setActiveEmojiId}
                     />
                     <Filters
-                        selectedEmojiFilters={selectedEmojiFilters}
-                        setSelectedEmojiFilters={setSelectedEmojiFilters}
-                        selectedDayFilters={selectedDayFilters}
-                        setSelectedDayFilters={setSelectedDayFilters}
+                        selectedEmoji={selectedEmoji}
+                        setSelectedEmoji={setSelectedEmoji}
+                        selectedDay={selectedDay}
+                        setSelectedDay={setSelectedDay}
                         getFilteredCount={getFilteredCount}
                     />
                     
