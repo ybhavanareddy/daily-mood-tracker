@@ -1,7 +1,7 @@
-import React from 'react'
+import React from "react"
 import { emojisList } from "../../utils/constants"
-import './EmojiSelector'
 import './EmojiSelector.css'
+
 function EmojiSelector({activeEmojiId,setActiveEmojiId}) {
     
 
@@ -10,25 +10,23 @@ function EmojiSelector({activeEmojiId,setActiveEmojiId}) {
             <h3 className="emoji-title">Select Your Mood</h3>
 
             <div className="emoji-list">
-                {emojisList.map(eachemoji =>{
-                    const isActive = activeEmojiId === eachemoji.id
+                {emojisList.map(emoji =>{
+                    const isActive = activeEmojiId === emoji.id
                     return(
                         <button
                             className={`emoji-item ${isActive?'active':''}`}
-                            key={eachemoji.id}
+                            key={emoji.id}
                             type="button"
-                            onClick={()=> setActiveEmojiId(eachemoji.id)}
-                            style={{
-                                border:isActive? '2px solid #ffbe38':'1px solid #ccc',
-                            }}
+                            onClick={()=> setActiveEmojiId(emoji.id)}
+                            aria-pressed ={isActive}
                             >
                             <img
-                                src={eachemoji.emojiUrl}
-                                alt={eachemoji.emojiName}
+                                src={emoji.emojiUrl}
+                                alt={emoji.emojiName}
                                 width="40"
                             /> 
 
-                            <p>{eachemoji.emojiName}</p>
+                            <p>{emoji.emojiName}</p>
                             </button>
                             
                     )

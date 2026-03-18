@@ -42,7 +42,9 @@ function Reports ({dateEmojis}){
             <Header />
             
             <main className="reports-content">
+
                 <h2 className="reports-title">Overall Emoji Report</h2>
+                
                 {/*OVERALL EMOJI CARDS */}
                 <section className="emoji-summary">
                     {emojisList.map(eachEmoji => (
@@ -58,9 +60,13 @@ function Reports ({dateEmojis}){
                         </div>
                     ))}
                 </section> 
+
+                <h2 className="reports-title">Monthly Reports</h2>
+
                 {/*MONTHLY REPORT */}
                 <section className="monthly-report">
                     <div className="monthly-header">
+                        
                         <select 
                             value={selectedMonth}
                             onChange={e => setSelectedMonth(Number(e.target.value))}
