@@ -1,10 +1,13 @@
 .home-page{
     min-height:100vh;
+    background-color: #1a1825; 
 }
 .home-page h2{
-  text-align:center;
-  color:#ffbe38;
-  margin-top:15px;
+  text-align: center;
+    color: #ffbe38;
+    margin-top: 20px;
+    font-size: 22px;
+    font-weight: 600;
 }
 
 .home-content{
@@ -27,9 +30,17 @@
   gap: 24px;
 }
 
+.home-left,
+.home-right {
+    gap: 20px;
+}
+
 @media (max-width: 768px) {
   .home-content {
     grid-template-columns: 1fr;
   }
+  .home-page h2 {
+        font-size: 18px;
+    }
 }
 
