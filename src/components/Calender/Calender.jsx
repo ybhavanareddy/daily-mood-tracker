@@ -1,6 +1,6 @@
 import React from 'react'
-import { daysList, monthsList } from "../../utils/constants";
-import { emojisList } from "../../utils/constants";
+import { daysList, monthsList, emojisList} from "../../utils/constants";
+
 import './Calender.css'
 
 function Calender({
@@ -29,9 +29,12 @@ function Calender({
     const getDateKey = date => `${currentYear}-${currentMonth + 1}-${date}`
 
 
-    const getEmojiImage = emojiId => 
-        emojisList.find(eachEmoji => eachEmoji.id === emojiId)
+    const getEmojiById = (emojiId) =>{
+        return emojisList.find(emoji => emoji.id === emojiId) || null
 
+
+    } 
+        
 
     const handleDateClick = date => {
     if (!activeEmojiId) {
@@ -81,18 +84,24 @@ function Calender({
 
 
     const isDateMatchingFilter = date => {
-        const dateKey = `${currentYear}-${currentMonth + 1}-${date}`
+        const dateKey = getDateKey(date)
         const emojiId = dateEmojis[dateKey]
 
         if (!emojiId) return false
 
-        const emojiName = emojisList.find(e => e.id === emojiId).emojiName
+        const emojiObj = getEmojiById(emojiId)
+
+        if(!emojiObj) return false 
+
+
+        const emojiName = emojiObj.emojiName
+
         const dayIndex = new Date(currentYear, currentMonth, date).getDay()
         const dayName = daysList[dayIndex].day
 
         return (
-            emojiName === selectedEmoji &&
-            dayName === selectedDay
+            (selectedEmoji === '' || emojiName === selectedEmoji) && 
+            (selectedDay === '' || dayName === selectedDay)
         )
     }
 
@@ -143,25 +152,28 @@ function Calender({
                     const dateKey = getDateKey(date)
                     const emojiId = dateEmojis[dateKey]
                     const isMatching = isDateMatchingFilter(date)
-                    return (
-                        <button className={`date-cell ${emojiId && !isMatching?'dimmed':''}`} key={date} onClick={()=>handleDateClick(date)}>
-                            {emojiId ? (() => {
-                            const emoji = getEmojiImage(emojiId)
 
-                            if (!emoji) {
-                                return date
-                            }
+                    let content = date 
 
-                            return (
-                                <img
-                                src={emoji.emojiUrl}
-                                alt={emoji.emojiName}
-                                width="30"
+                    if(emojiId){
+                        const emoji = getEmojiById(emojiId)
+                        if (emoji){
+                            content = (
+                                <img 
+                                    src={emoji.emojiUrl}
+                                    alt={emoji.emojiName}
+                                    width="30"
                                 />
                             )
-                            })() : (
-                            date
-                            )}
+                        }
+                    }
+                    return (
+                        <button 
+                            className={`date-cell ${emojiId && !isMatching?'dimmed':''}`} 
+                            key={date} 
+                            onClick={()=>handleDateClick(date)}
+                        >
+                            {content}
 
                         </button>
                     )
