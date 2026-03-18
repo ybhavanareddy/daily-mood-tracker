@@ -167,9 +167,11 @@ function Calender({
                             )
                         }
                     }
+
+                    const isFilterActive = selectedEmoji !== '' || selectedDay !== ''
                     return (
                         <button 
-                            className={`date-cell ${emojiId && !isMatching?'dimmed':''}`} 
+                            className={`date-cell ${isFilterActive && !isMatching ? 'dimmed' : ''}`} 
                             key={date} 
                             onClick={()=>handleDateClick(date)}
                         >

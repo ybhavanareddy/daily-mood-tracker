@@ -1,8 +1,8 @@
 .emoji-selector{
     background-color:#343243;
     padding:20px;
-    border-radius:12px;
-     box-shadow: 0 0 8px rgba(253, 240, 3, 0.3); 
+    border-radius:16px;
+    box-shadow: 0 0 8px rgba(253, 240, 3, 0.3); 
 }
 
 .emoji-title{
