@@ -174,17 +174,17 @@ Daily-Mood-Tracker/
 
 ## 🖼️ Screenshots
 
-### Login Page
-![Login](./assets/DesktopView-LoginPage.png)
+<p align="center">
+  <img src="./assets/DesktopView-LoginPage.png" width="45%" />
+  <img src="./assets/DesktopView-HomePage.png" width="45%" /><br/>
+  <b>Login Page</b> | <b>Home Page</b>
+</p>
 
-### Home Page
-![Home](./assets/DesktopView-HomePage.png)
-
-### Reports Page
-![Reports](./assets/DesktopView-ReportsPAge.png)
-
-### Mobile View
-![Mobile](./assets/MobileView-HomePage.png)
+<p align="center">
+  <img src="./assets/DesktopView-ReportsPAge.png" width="45%" />
+  <img src="./assets/MobileView-HomePage.png" width="45%" /><br/>
+  <b>Reports Dashboard</b> | <b>Mobile View</b>
+</p>
 
 ## ▶️ How to Run Locally
 
